@@ -1,8 +1,5 @@
 package UserInterface;
-import javax.swing.JFrame;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -12,11 +9,11 @@ public class InterfaceMain extends  JFrame implements ActionListener {
     JButton sing;
     JButton exit;
     JLabel beginning;
+    JLabel instructions;
 
     /**
      * Verify admin
      * **/
-    JLabel admin;
 
     public InterfaceMain() {
 
@@ -28,29 +25,31 @@ public class InterfaceMain extends  JFrame implements ActionListener {
         setLayout(null);
         setLocationRelativeTo(null);
 
-
-
-
         /**Creacion de oobjetos
          * */
         beginning = new JLabel("Bienvenido a Java Market\n te ayudamos a administrar tu inventario");
-        beginning.setBounds(100,15,400,100);
+        beginning.setBounds(100,15,400,150);
 
-        sing = new JButton("Ingresar");
+        instructions = new JLabel("Selecciona como deseas ingresar ");
+        instructions.setBounds(150, 40,400,150);
+
+        sing = new JButton("Administrador");
         sing.setBounds(20,300,180,60);
 
-        exit = new JButton("Salir");
+        exit = new JButton("Usuario");
         exit.setBounds(340,300,180,60);
 
         /**
          * Se agregan los item al contenedor
          * */
         getContentPane().add(beginning);
+        add(instructions);
         getContentPane().add(sing);
         getContentPane().add(exit);
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
+        setResizable(false);
 
         /**
          * Creando comportamientos
@@ -59,7 +58,8 @@ public class InterfaceMain extends  JFrame implements ActionListener {
         ActionListener sigIn = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            VerifyScreen very = new VerifyScreen();
+            String password = JOptionPane.showInputDialog("Ingresa tu contraseña");
+            VerifyAdmin.verifyPassword(password);
             }
         };
 
