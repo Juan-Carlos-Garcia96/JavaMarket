@@ -6,10 +6,14 @@ public class Products {
     private String description;
     private int  prices;
     private double pices;
-    private boolean IsActive;
+    private String type;
 
-    public Products(){
-
+    public Products(int id, String description, int prices, double pices, String type) {
+        this.id = id;
+        this.description = description;
+        this.prices = prices;
+        this.pices = pices;
+        this.type = type;
     }
 
     public int getId() {
@@ -44,11 +48,12 @@ public class Products {
         this.pices = pices;
     }
 
-    public boolean isActive() {
-        return IsActive;
+    public String getType(){
+        return  type;
     }
 
-    public void setActive(boolean active) {
-        IsActive = active;
+    public void setType(String type){
+        this. type = type;
     }
+
 }

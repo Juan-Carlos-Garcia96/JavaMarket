@@ -10,6 +10,7 @@ public class InterfaceMain extends  JFrame implements ActionListener {
     JButton exit;
     JLabel beginning;
     JLabel instructions;
+    JPasswordField pas;
 
     /**
      * Verify admin
@@ -58,7 +59,7 @@ public class InterfaceMain extends  JFrame implements ActionListener {
         ActionListener sigIn = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            String password = JOptionPane.showInputDialog("Ingresa tu contraseña");
+            String password = JOptionPane.showInputDialog(  "Ingrese la contraseña");
             VerifyAdmin.verifyPassword(password);
             }
         };
