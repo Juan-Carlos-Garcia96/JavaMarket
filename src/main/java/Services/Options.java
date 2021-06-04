@@ -57,12 +57,14 @@ public class Options extends JFrame implements ActionListener {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
+    //Comportamiento de los botones
     ActionListener btnValidate = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
 
             if(e.getSource() == insert){
-                // pantalla catalogo
+                ServicesProducts services = new ServicesProducts();
+                setVisible(false);
             }
             if(e.getSource() == update){
                 //pantalla catalogo

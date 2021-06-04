@@ -38,7 +38,7 @@ public class InterfaceMain extends  JFrame implements ActionListener {
         sing.setBounds(20,320,180,60);
 
         exit = new JButton("Usuario");
-        exit.setBounds(340,340,180,60);
+        exit.setBounds(340,320,180,60);
 
         /**
          * Se agregan los item al contenedor
@@ -71,7 +71,14 @@ public class InterfaceMain extends  JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
+        //Punto de entrada de aplicacion
         InterfaceMain menu = new InterfaceMain();
+        try{
+            UIManager.setLookAndFeel("com.jtattoo.plaf.mint.MintLookAndFeel");
+        }catch (Exception e)
+        {
+            System.out.println(e);
+        }
     }
 
     @Override
