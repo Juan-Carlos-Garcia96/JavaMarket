@@ -32,13 +32,13 @@ public class InterfaceMain extends  JFrame implements ActionListener {
         beginning.setBounds(100,15,400,150);
 
         instructions = new JLabel("Selecciona como deseas ingresar ");
-        instructions.setBounds(150, 40,400,150);
+        instructions.setBounds(170, 40,400,150);
 
         sing = new JButton("Administrador");
-        sing.setBounds(20,300,180,60);
+        sing.setBounds(20,320,180,60);
 
         exit = new JButton("Usuario");
-        exit.setBounds(340,300,180,60);
+        exit.setBounds(340,340,180,60);
 
         /**
          * Se agregan los item al contenedor
