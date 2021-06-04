@@ -3,13 +3,15 @@ package Products;
 public class Products {
 
     private int id;
+    private  String name;
     private String description;
-    private int  prices;
-    private double pices;
+    private double prices;
+    private int pices;
     private String type;
 
-    public Products(int id, String description, int prices, double pices, String type) {
+    public Products(int id,String name,  String description, int prices, int pices, String type) {
         this.id = id;
+        this.name = name;
         this.description = description;
         this.prices = prices;
         this.pices = pices;
@@ -20,6 +22,13 @@ public class Products {
         return id;
     }
 
+    public String getName(){
+        return  name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
     public void setId(int id) {
         this.id = id;
     }
@@ -32,19 +41,19 @@ public class Products {
         this.description = description;
     }
 
-    public int getPrices() {
+    public double getPrices() {
         return prices;
     }
 
-    public void setPrices(int prices) {
+    public void setPrices(double prices) {
         this.prices = prices;
     }
 
-    public double getPices() {
+    public int getPices() {
         return pices;
     }
 
-    public void setPices(double pices) {
+    public void setPices(int pices) {
         this.pices = pices;
     }
 

@@ -2,9 +2,11 @@ package ServicesDao;
 
 import DBconection.DbConection;
 import Products.Food;
+import com.mysql.cj.jdbc.ConnectionWrapper;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class Dao {
 
@@ -18,9 +20,24 @@ public class Dao {
         try(Connection conexion  =   dbConection.getConection()) {
             PreparedStatement ps = null;
 
+            try{
 
+            String query = "INSERT INTO products (`name`, `descr`, `price`, `quant`, `type`) VALUES (?,?,?,?)";
+            ps = conexion.prepareStatement(query);
+            ps.setString(1,food.getName());
+            ps.setString(2, food.getDescription());
+            ps.setDouble(3,food.getPrices());
+            ps.setInt(4, food.getPices());
+            ps.setString(5, food.getType());
 
-        }catch (Exception e){
+            ps.executeUpdate();
+                System.out.println(food.getId() + " Id agregado correctamente");
+
+            }catch (Exception ex){
+                System.out.println(ex);
+            }
+
+        }catch (SQLException e){
             System.out.println(e);
         }
 
