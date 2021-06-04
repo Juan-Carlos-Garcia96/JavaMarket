@@ -61,6 +61,7 @@ public class InterfaceMain extends  JFrame implements ActionListener {
             public void actionPerformed(ActionEvent e) {
             String password = JOptionPane.showInputDialog(  "Ingrese la contraseña");
             VerifyAdmin.verifyPassword(password);
+            setVisible(false);
             }
         };
 

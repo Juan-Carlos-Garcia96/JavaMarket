@@ -2,18 +2,19 @@ package Services;
 
 import javax.swing.*;
 
-public class ServicesProducts  extends JFrame {
+public class Options extends JFrame {
 
     //Items
     JLabel title, nameT, descT,priceT,piecesT,typeT;
-     JButton save;
-     JTextField name , desc,price,  pieces, type;
-       JTextArea descr;
+    JButton save;
+    JTextField name , desc,price,  pieces, type;
+    JTextArea descr;
 
-    public ServicesProducts(){
+    public Options(){
+        registroProduct();
 
 
-}
+    }
 
     public void registroProduct(){
         setSize(700,700);
@@ -34,6 +35,5 @@ public class ServicesProducts  extends JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-    }
+    }}
 
-   }
