@@ -42,7 +42,8 @@ public class ServicesProducts  extends JFrame {
 
                 if(e.getSource() == food){
                 Options operaciones = new Options();
-                operaciones.actions();
+
+                setVisible(false);
 
                 }
             }
