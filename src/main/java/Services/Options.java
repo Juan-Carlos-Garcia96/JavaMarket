@@ -12,12 +12,12 @@ public class Options extends JFrame implements ActionListener {
 
 
     public Options(){
-        registroProduct();
+        actions();
 
 
     }
 
-    public void registroProduct(){
+    public void actions(){
         setSize(700,700);
         setTitle("Registro Mercancia");
         setLayout(null);
@@ -64,16 +64,25 @@ public class Options extends JFrame implements ActionListener {
 
             if(e.getSource() == insert){
                 ServicesProducts services = new ServicesProducts();
+
                 setVisible(false);
+
             }
             if(e.getSource() == update){
-                //pantalla catalogo
+                ServicesProducts services = new ServicesProducts();
+
+                setVisible(false);
+                int op = 2;
             }
             if(e.getSource() == delete){
-                //catalogo
+                ServicesProducts services = new ServicesProducts();
+
+                setVisible(false);
             }
             if (e.getSource() == query){
-                //pantalla consulta
+                ServicesProducts services = new ServicesProducts();
+
+                setVisible(false);
             }
         }
     };

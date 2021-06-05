@@ -14,7 +14,7 @@ public class Dao {
 
 
     //foods
-    public  static void altaProducts(Food food){
+    public   void altaProducts(Food food){
         DbConection dbConection = new DbConection();
 
         try(Connection conexion  =   dbConection.getConection()) {

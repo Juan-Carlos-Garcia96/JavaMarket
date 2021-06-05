@@ -2,6 +2,7 @@ package UserInterface;
 
 import Products.Food;
 import Services.Options;
+import Services.ServicesProducts;
 
 import javax.swing.*;
 
@@ -22,7 +23,8 @@ public class VerifyAdmin {
         case "12345":
 
             JOptionPane.showMessageDialog(null, "Bienvenido Administrador!", "Inicio correcto",JOptionPane.INFORMATION_MESSAGE );
-            Options options = new Options();
+            ServicesProducts sev = new ServicesProducts();
+            sev.electionProducts();
             break;
 
         case "13523":

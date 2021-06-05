@@ -1,20 +1,25 @@
 package Services;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ServicesProducts  extends JFrame {
 
     //Items
     JButton food, cleaninProducts;
+    int opType = 0;
 
     public ServicesProducts(){
-    registroProduct();
+
 
 }
 
-    public void registroProduct(){
+    public void electionProducts(){
+
+        //Pantalla de eleccion a ingresar
         setSize(400,200);
-        setTitle("Productos");
+        setTitle("PRODUCTOS A TRANAJAR ");
         setLayout(null);
 
         food = new JButton("Abarrotes");
@@ -29,6 +34,27 @@ public class ServicesProducts  extends JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        //Evento al seleccionar
+
+        ActionListener menuEvent =  new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                if(e.getSource() == food){
+                Options operaciones = new Options();
+                operaciones.actions();
+
+                }
+            }
+        };
+
+        /**
+         * Asignacion de eventos a botones
+         * */
+            food.addActionListener(menuEvent);
+
+
+
     }
 
-   }
+    }
