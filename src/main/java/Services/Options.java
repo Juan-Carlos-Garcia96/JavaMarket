@@ -1,7 +1,5 @@
 package Services;
 
-import UserInterface.Formularios;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,6 +14,8 @@ public class Options extends JFrame implements ActionListener {
     //Constructor
 
     public Options() {
+
+
 
             setSize(700,700);
             setTitle("Registro Mercancia");
@@ -59,7 +59,8 @@ public class Options extends JFrame implements ActionListener {
                 public void actionPerformed(ActionEvent e) {
 
                     if(e.getSource() == insert){
-                        System.out.println("Hola oprmite insert");
+                        ServicesDAO servRegis = new ServicesDAO();
+                        servRegis.register();
                         setVisible(false);
 
                     }
@@ -70,6 +71,8 @@ public class Options extends JFrame implements ActionListener {
 
                     }
                     if(e.getSource() == delete){
+                        ServicesDAO servRegis = new ServicesDAO();
+                        servRegis.delete();
 
 
                         setVisible(false);

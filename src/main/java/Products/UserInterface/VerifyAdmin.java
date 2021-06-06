@@ -1,7 +1,5 @@
-package UserInterface;
+package Products.UserInterface;
 
-import Products.Food;
-import Services.Options;
 import Services.ServicesProducts;
 
 import javax.swing.*;

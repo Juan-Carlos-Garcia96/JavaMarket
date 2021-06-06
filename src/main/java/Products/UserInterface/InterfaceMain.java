@@ -1,4 +1,6 @@
-package UserInterface;
+package Products.UserInterface;
+import Products.Food;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

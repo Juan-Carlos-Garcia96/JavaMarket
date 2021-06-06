@@ -13,26 +13,13 @@ public class Food extends  Products{
 
     public void  altaProduct(int id, String description, int prices, double pices, String type){
 
-    }
-
-    public void actualizaProducts(int option){
-
-        switch (option){
-
-            case 1:
-                ServicesProducts register = new ServicesProducts();
-
-                break;
-
-            case 2:
-                break;
-
-            case 3:
-                break;
-        }
-
 
     }
+
+
+
+
+
 
 
 }
