@@ -14,7 +14,7 @@ public class Dao {
 
 
     //foods
-    public   void altaProducts(Food food){
+    public  static  void altaProducts(Food food){
         DbConection dbConection = new DbConection();
 
         try(Connection conexion  =   dbConection.getConection()) {
@@ -22,7 +22,7 @@ public class Dao {
 
             try{
 
-            String query = "INSERT INTO products (`name`, `descr`, `price`, `quant`, `type`) VALUES (?,?,?,?)";
+            String query = "INSERT INTO products (`name`, `descr`, `price`, `quant`, `type`) VALUES (?,?,?,?,?)";
             ps = conexion.prepareStatement(query);
             ps.setString(1,food.getName());
             ps.setString(2, food.getDescription());

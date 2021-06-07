@@ -1,5 +1,8 @@
 package Services;
 
+import Products.Food;
+import ServicesDao.Dao;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -114,11 +117,38 @@ public void delete(){
         ActionListener saveD  = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-          if (!cam1T.equals("") )
+          if (!cam1T.equals("") && !cam2T.equals("") && !cam3T.equals("") && !cam4T.equals("") && !cam5T.equals(""))
           {
 
+              //Se asigna el valor de cada campo a una variavle
             String nameD = cam1T.getText();
-              System.out.println(nameD);
+            String descD = cam2T.getText();
+            String pricD = cam3T.getText();
+            String picD = cam4T.getText();
+            String typeD = cam5T.getText();
+
+            //Se hace conversion de variables texo a enteros y decimales para almacenas en base
+
+           int piecesD = Integer.parseInt(picD);
+           Double pricesD = Double.parseDouble(pricD);
+
+
+           /**
+            * Se crea instancia de la clase Food para registro de productos
+            * */
+
+              Food foods = new Food(0,"q","q",0,1,"w");
+              foods.setName(nameD);
+              foods.setDescription(descD);
+              foods.setPices(piecesD);
+              foods.setPrices(pricesD);
+              foods.setType(typeD);
+
+
+              //Se envia a informacion a clase que envia a base de datos con el metodo altaProdcuts
+              Dao.altaProducts(foods);
+
+              System.out.println(foods);
 
 
 
