@@ -21,7 +21,6 @@ public class Dao {
             PreparedStatement ps = null;
 
             try{
-
             String query = "INSERT INTO products (`name`, `descr`, `price`, `quant`, `type`) VALUES (?,?,?,?,?)";
             ps = conexion.prepareStatement(query);
             ps.setString(1,food.getName());
@@ -29,19 +28,33 @@ public class Dao {
             ps.setDouble(3,food.getPrices());
             ps.setInt(4, food.getPices());
             ps.setString(5, food.getType());
-
             ps.executeUpdate();
                 System.out.println(food.getId() + " Id agregado correctamente");
-
             }catch (Exception ex){
                 System.out.println(ex);
             }
-
         }catch (SQLException e){
             System.out.println(e);
         }
+    }
+    public static void eliminaProduct(Food food){
+    DbConection dbConection = new DbConection();
+    try(Connection conexion = dbConection.getConection()) {
+        try{
+            PreparedStatement ps = null;
+            String queryDel = "DELETE FROM products WHERE id= ?";
+            ps = conexion.prepareStatement(queryDel);
+            ps.setInt(1,food.getId());
+            ps.executeUpdate();
+        }catch (Exception e){
+
+        }
+
+
+
+    }catch (SQLException ex){
 
     }
 
-
+    }
 }

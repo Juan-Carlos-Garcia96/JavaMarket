@@ -59,23 +59,24 @@ public class Options extends JFrame implements ActionListener {
                 public void actionPerformed(ActionEvent e) {
 
                     if(e.getSource() == insert){
-                        ServicesDAO servRegis = new ServicesDAO();
+                        String in = "ins";
+                        ServicesDAO servRegis = new ServicesDAO(in);
                         servRegis.register();
                         setVisible(false);
 
                     }
                     if(e.getSource() == update){
-
-
+                        String update = "update";
+                        ServicesDAO servUpdate = new ServicesDAO(update);
+                        servUpdate.modify();
                         setVisible(false);
-
                     }
                     if(e.getSource() == delete){
-                        ServicesDAO servRegis = new ServicesDAO();
+                        String del = "del";
+                        ServicesDAO servRegis = new ServicesDAO(del);
                         servRegis.delete();
-
-
                         setVisible(false);
+
                     }
                     if (e.getSource() == query){
 
