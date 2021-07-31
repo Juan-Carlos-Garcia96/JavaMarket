@@ -329,6 +329,7 @@ public class ServicesDAO  extends JFrame implements ActionListener {
 
 
                 String idDate = id.getText();
+                int idDates = Integer.parseInt(idDate);
                 String dateS = date.getText();
 
 
@@ -339,10 +340,19 @@ public class ServicesDAO  extends JFrame implements ActionListener {
 
                         Modify_Tips mod = new  Modify_Tips();
                         switch (dateS){
+                            //Acciones  a realizar para modificar dependiendo
+                            //dependiendo de las opciones a modificar
                             case "1":
-                                mod.modName();
+                                mod.modName(idDates);
                                 setVisible(true);
+                                break;
+
+                            case "2":
+                                mod.modifyType(idDates);
+                                setVisible(true);
+                                break;
                         }
+
                 }else {
                         JOptionPane.showMessageDialog(null, "Lo siento te falta un dato", "Error", JOptionPane.ERROR_MESSAGE);
                     }

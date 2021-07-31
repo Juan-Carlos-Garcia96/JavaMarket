@@ -14,10 +14,9 @@ public class Food extends  Products{
     public void  altaProduct(int id, String description, int prices, double pices, String type){
     }
 
-    public void   borradoProduct(int id){
+    public void   borradoProduct(int id){ }
 
-    }
-
+    public void updateName(){}
 
 
 

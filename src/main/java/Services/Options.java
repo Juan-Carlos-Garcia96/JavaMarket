@@ -71,6 +71,9 @@ public class Options extends JFrame implements ActionListener {
                         servUpdate.modify();
                         setVisible(false);
                     }
+
+                    //Al momento de oprimir acualizar direcciona a la clase
+                    //Service DAO
                     if(e.getSource() == delete){
                         String del = "del";
                         ServicesDAO servRegis = new ServicesDAO(del);
