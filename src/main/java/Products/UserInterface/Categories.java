@@ -8,7 +8,7 @@ public class Categories extends JFrame {
 
 
     public Categories(){
-        setSize(200,300);
+        setSize(300,300);
         setResizable(false);
         setLayout(null);
 
@@ -18,13 +18,13 @@ public class Categories extends JFrame {
 
 
         cat1 = new JLabel("Abarrotes");
-        cat1.setBounds(40,40,100,30);
+        cat1.setBounds(40,40,200,30);
 
         cat2 = new JLabel("Dulceria");
-        cat2.setBounds(40,80,100,30);
+        cat2.setBounds(40,80,200,30);
 
         cat3 = new JLabel("Limpieza");
-        cat3.setBounds(40,120,100,30);
+        cat3.setBounds(40,120,200,30);
 
 
         add(tittle);

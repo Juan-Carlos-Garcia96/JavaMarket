@@ -18,6 +18,7 @@ public class VerifyAdmin {
     {
     switch (passwod)
     {
+
         case "12345":
 
             JOptionPane.showMessageDialog(null, "Bienvenido Administrador!", "Inicio correcto",JOptionPane.INFORMATION_MESSAGE );
