@@ -14,7 +14,7 @@ public class Categories extends JFrame {
 
 
         tittle = new JLabel("Categorias permitidas");
-        tittle.setBounds(100,20,40,30);
+        tittle.setBounds(100,20,200,30);
 
 
         cat1 = new JLabel("Abarrotes");

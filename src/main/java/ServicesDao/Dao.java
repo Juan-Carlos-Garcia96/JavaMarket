@@ -77,10 +77,9 @@ public class Dao {
         }
     }
 
-    //Actualozacion de tipo en los articulos
+    //Actualizacion  de tipo en los articulos
     public static void updatetype(Food food){
         DbConection dbConection = new DbConection();
-
         try(Connection db = dbConection.getConection()){
             PreparedStatement ps;
 
@@ -98,6 +97,29 @@ public class Dao {
             System.out.println("Ups error" + ex);
         }
 
+    }
+
+    //Actualizando descripcion  en los articulos
+
+    public static void updateDesc(Food food){
+        DbConection db = new DbConection();
+        try(Connection dbConection = db.getConection()){
+            PreparedStatement ps;
+
+            try{
+                String queryDesc = "UPDATE products set descr = ? where id = ? ";
+                ps = dbConection.prepareStatement(queryDesc);
+                ps.setString(1, food.getDescription());
+                ps.setInt(2,food.getId());
+                ps.executeUpdate();
+
+            }catch(Exception e){
+                System.out.println("Ups hay un error" + e);
+            }
+
+        }catch (SQLException ex){
+            System.out.println("Ups hay un error" + ex);
+        }
     }
 
 }

@@ -8,6 +8,13 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
+/**
+ *
+ * Esta clase es la encargada de proveeer la parte grafica en caso de requerir hacer alguna modificacion
+ * como nombre, tipo, descripcion etc.
+ * **/
+
 public class Modify_Tips  extends JFrame  implements ActionListener {
 
 
@@ -29,6 +36,10 @@ public class Modify_Tips  extends JFrame  implements ActionListener {
                 break;
             case 2:
                 modifyType(id);
+                break;
+
+            case 3:
+                modDesc(id);
                 break;
         }
 
@@ -189,7 +200,80 @@ public class Modify_Tips  extends JFrame  implements ActionListener {
     }
 
 
+        public void modDesc(int id) {
 
+            //********************************* PROPIEDADES DE MODIFICANDO DESCRIPCION ************
+
+            setSize(600, 600);
+            setResizable(false);
+            setLocationRelativeTo(null);
+
+
+            JLabel tittle, descr;
+            JTextArea date;
+            JButton save, del;
+
+
+            tittle = new JLabel("Bienvenido a modificar descripcion");
+            tittle.setBounds(200, 20, 200, 30);
+            add(tittle);
+
+            descr = new JLabel("Ingresa cual sera su descripcion");
+            descr.setBounds(30, 60, 250, 30);
+            add(descr);
+
+            date = new JTextArea("");
+            date.setBounds(300, 60, 200, 100);
+            add(date);
+
+            save = new JButton("Guardar");
+            save.setBounds(100, 300, 70, 30);
+            add(save);
+
+
+             del = new JButton("Limpiar");
+             del.setBounds(200,300,70,30);
+             add(del);
+
+
+
+        setLayout(null);
+        setVisible(true);
+
+            ActionListener limpiar = new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    date.setText("");
+                }
+            };
+
+            ActionListener saveData = new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+
+                    String contenido = date.getText();
+
+                    if(!contenido.equals("")){
+                        Food food = new Food(0, "q", "q", 0, 1, "w");
+
+
+                        int id_Desc = id;
+                        food.setId(id_Desc);
+                        food.setDescription(contenido);
+
+                        Dao.updateDesc(food);
+                        JOptionPane.showMessageDialog(null,"Actualizacion exitosa", "Exito", JOptionPane.INFORMATION_MESSAGE);
+
+                    }
+
+
+                }
+            };
+
+            del.addActionListener(limpiar);
+            save.addActionListener(saveData);
+
+        }
     @Override
     public void actionPerformed(ActionEvent e) {
 

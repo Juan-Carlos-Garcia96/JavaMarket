@@ -287,7 +287,10 @@ public class ServicesDAO  extends JFrame implements ActionListener {
       setResizable(false);
       setLayout(null);
 
-      //Definiendo  items
+      /**
+       * Ventana con opciones de modificar
+       * esta ventana envia el id del producto a modificar asi como el tipo de modificacion
+       * */
 
 
         tittle = new JLabel("Bienvenido a Modificar");
@@ -327,7 +330,10 @@ public class ServicesDAO  extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-
+                /**
+                 * Esta parte es la conversion del id quee es String a entero para asi enviarlo a la clase
+                 * modify_tips para realizar el cambio
+                 * */
                 String idDate = id.getText();
                 int idDates = Integer.parseInt(idDate);
                 String dateS = date.getText();
@@ -338,7 +344,13 @@ public class ServicesDAO  extends JFrame implements ActionListener {
                         JOptionPane.showMessageDialog(null,"Vamos a modificar","Exitoso", JOptionPane.WARNING_MESSAGE);
                         System.out.println(idDate + " " + dateS );
 
+
+                        /***
+                         * Menu de opciones a modificar
+                         */
                         Modify_Tips mod = new  Modify_Tips();
+
+
                         switch (dateS){
                             //Acciones  a realizar para modificar dependiendo
                             //dependiendo de las opciones a modificar
@@ -350,6 +362,10 @@ public class ServicesDAO  extends JFrame implements ActionListener {
                             case "2":
                                 mod.modifyType(idDates);
                                 setVisible(true);
+                                break;
+
+                            case "3":
+                                mod.modDesc(idDates);
                                 break;
                         }
 
